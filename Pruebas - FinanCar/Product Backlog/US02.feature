@@ -14,3 +14,8 @@ Feature: Solicitud de financiamiento
         Given que soy un usuario consumidor interesado en financiamiento
         When accedo a la sección de financiamiento en la aplicación
         Then debería poder ver una lista de opciones de financiamiento disponibles
+        
+    Scenario: Usuario con financiamiento pendiente intenta solicitar otro
+        Given que soy un usuario consumidor con un financiamiento pendiente
+        When intento enviar una nueva solicitud de financiamiento
+        Then debería recibir un mensaje indicando que ya tengo un financiamiento pendiente y no puedo solicitar otro
