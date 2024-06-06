@@ -14,3 +14,8 @@ Feature: Gestión de crédito del automóvil
         Given que soy un usuario consumidor con un crédito activo para mi automóvil
         When actualizo mi información de contacto en la sección de gestión de crédito
         Then debería ver la información actualizada reflejada en mi perfil de crédito
+        
+    Scenario: Usuario sin crédito activo intenta realizar un pago
+        Given que soy un usuario consumidor sin un crédito activo para mi automóvil
+        When intento realizar un pago del crédito
+        Then debería recibir un mensaje indicando que no tengo un crédito activo y no puedo realizar pagos
